@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { CreatePost, Post, PostsList1, PostsList2 } from "./components";
+import {
+  CreatePost,
+  Post,
+  PostListPaginated,
+  PostsList1,
+  PostsList2,
+} from "./components";
 
 const App = () => {
   const [currPage, setCurrPage] = useState(<PostsList1 />);
@@ -13,6 +19,9 @@ const App = () => {
         onClick={() => setCurrPage(<CreatePost setCurrPage={setCurrPage} />)}
       >
         New Post
+      </button>
+      <button onClick={() => setCurrPage(<PostListPaginated />)}>
+        Post List Paginated
       </button>
       <br />
       {currPage}
