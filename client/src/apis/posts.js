@@ -11,3 +11,14 @@ export async function getPosts() {
 export async function getPost(id) {
   return axios.get(`${SERVER_URL}/posts/${id}`).then((res) => res.data);
 }
+
+export async function createPost({ title, body }) {
+  return axios
+    .post(`${SERVER_URL}/posts`, {
+      title,
+      body,
+      userId: 1,
+      id: Date.now(),
+    })
+    .then((res) => res.data);
+}
