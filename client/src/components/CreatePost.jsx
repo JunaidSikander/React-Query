@@ -9,6 +9,8 @@ const CreatePost = ({ setCurrPage }) => {
   const createPostMutation = useMutation({
     mutationFn: createPost,
     onSuccess: (data) => {
+      queryClient.setQueryData(["posts", data.id], data); // adding the post data in the cache
+      queryClient.invalidateQueries(["posts"], { exact: true }); // invalidateQueries refetch the new posts data instead of getting from cache
       setCurrPage(<Post id={data.id} />);
     },
   });
