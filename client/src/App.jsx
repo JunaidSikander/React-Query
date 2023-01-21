@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PostsList1, PostsList2 } from "./components";
+import { Post, PostsList1, PostsList2 } from "./components";
 
 const App = () => {
   const [currPage, setCurrPage] = useState(<PostsList1 />);
@@ -8,6 +8,8 @@ const App = () => {
     <div>
       <button onClick={() => setCurrPage(<PostsList1 />)}>Post List 1</button>
       <button onClick={() => setCurrPage(<PostsList2 />)}>Post List 2</button>
+      <button onClick={() => setCurrPage(<Post id={1} />)}>First Post</button>
+
       <br />
       {currPage}
     </div>
