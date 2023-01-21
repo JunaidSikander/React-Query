@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   CreatePost,
   Post,
+  PostListInfinite,
   PostListPaginated,
   PostsList1,
   PostsList2,
@@ -22,6 +23,9 @@ const App = () => {
       </button>
       <button onClick={() => setCurrPage(<PostListPaginated />)}>
         Post List Paginated
+      </button>
+      <button onClick={() => setCurrPage(<PostListInfinite />)}>
+        Post List Infinite
       </button>
       <br />
       {currPage}
