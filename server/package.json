@@ -1,0 +1,13 @@
+{
+  "name": "dummy-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Junaid Sikander",
+  "license": "MIT",
+  "scripts": {
+    "start": "json-server --watch db.json"
+  },
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
+}
